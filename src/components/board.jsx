@@ -1,3 +1,20 @@
 import React from 'react';
+import { AppBar, Container, Grid, Typography } from '@material-ui/core';
 
-export default () => <div>Board</div>;
+export default () => (
+  <>
+    <Container>
+      <Grid container spacing={4}>
+        <Grid item xs={12} sm={4}>
+          1
+        </Grid>
+        <Grid item xs={12} sm={4}>
+          2
+        </Grid>
+        <Grid item xs={12} sm={4}>
+          3
+        </Grid>
+      </Grid>
+    </Container>
+  </>
+);

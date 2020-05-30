@@ -8,7 +8,9 @@ import {
 } from 'react-router-dom';
 import firebase from './firebase';
 import './App.css';
+import { AppBar, Typography } from '@material-ui/core';
 
+import NavBar from './components/nav-bar';
 import Login from './components/login';
 import User from './components/user';
 import Board from './components/board';
@@ -74,6 +76,9 @@ function App() {
   return (
     <div className='App'>
       <Router>
+        <Route>
+          <NavBar />
+        </Route>
         <Switch>
           {/* <Route path='/'>
             <Redirect to='/login' />
