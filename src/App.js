@@ -1,15 +1,9 @@
 import React from 'react';
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link,
-  Redirect,
-} from 'react-router-dom';
-import firebase from './firebase';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { Provider } from 'react-redux';
 import './App.css';
-import { AppBar, Typography } from '@material-ui/core';
 
+import store from './store';
 import NavBar from './components/nav-bar';
 import Login from './components/login';
 import User from './components/user';
@@ -74,25 +68,27 @@ function App() {
   // const renderListItem = (item) => <li key={item.id}>{item.content}</li>;
 
   return (
-    <div className='App'>
-      <Router>
-        <Route>
-          <NavBar />
-        </Route>
-        <Switch>
-          {/* <Route path='/'>
-            <Redirect to='/login' />
-          </Route> */}
-          <Route path='/login'>
-            <Login />
+    <Provider store={store}>
+      <div className='App'>
+        <Router>
+          <Route>
+            <NavBar />
           </Route>
-          <Route path='/board'>
-            <Board />
-          </Route>
-          {/* <Route path='/:user'>{(user) => <User user={user} />}</Route> */}
-        </Switch>
-      </Router>
-    </div>
+          <Switch>
+            {/* <Route path='/'>
+              <Redirect to='/login' />
+            </Route> */}
+            <Route path='/login'>
+              <Login />
+            </Route>
+            <Route path='/board'>
+              <Board />
+            </Route>
+            {/* <Route path='/:user'>{(user) => <User user={user} />}</Route> */}
+          </Switch>
+        </Router>
+      </div>
+    </Provider>
   );
 }
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import { AppBar, Container, Grid, Typography } from '@material-ui/core';
+import { Container, Grid } from '@material-ui/core';
 
 export default () => (
   <>
